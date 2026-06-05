@@ -31,6 +31,7 @@ npm run dev
 
 ```bash
 DEEPSEEK_API_KEY=your_deepseek_api_key_here
+DEEPSEEK_BASE_URL=https://api.deepseek.com
 DEEPSEEK_MODEL=deepseek-v4-flash
 ```
 
@@ -41,7 +42,8 @@ DEEPSEEK_MODEL=deepseek-v4-flash
 1. 将项目上传到 GitHub。
 2. 在 Vercel 导入 GitHub 仓库。
 3. 在 Vercel 项目环境变量中新增 `DEEPSEEK_API_KEY`。
-4. 部署完成后，把公开访问链接粘贴到课程作业文末。
+4. 在 Vercel 项目环境变量中新增 `DEEPSEEK_BASE_URL=https://api.deepseek.com`。
+5. 部署完成后，把公开访问链接粘贴到课程作业文末。
 
 ## Hugging Face Spaces 部署
 
@@ -49,8 +51,9 @@ DEEPSEEK_MODEL=deepseek-v4-flash
 2. Space 名称建议使用 `linghuo-income-agent`。
 3. 将本 GitHub 仓库导入或同步到 Space。
 4. 在 Space 的 Settings -> Secrets 中新增 `DEEPSEEK_API_KEY`。
-5. 如需指定模型，在 Variables 中新增 `DEEPSEEK_MODEL=deepseek-v4-flash`。
-6. 构建完成后，公开访问链接通常为 `https://huggingface.co/spaces/<用户名>/linghuo-income-agent`。
+5. 在 Variables 中新增 `DEEPSEEK_BASE_URL=https://api.deepseek.com`。
+6. 如需指定模型，在 Variables 中新增 `DEEPSEEK_MODEL=deepseek-v4-flash`。
+7. 构建完成后，公开访问链接通常为 `https://huggingface.co/spaces/<用户名>/linghuo-income-agent`。
 
 ## 安全说明
 
