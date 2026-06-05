@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 import { AgentStage, buildMessages } from "@/lib/agentPrompt";
 
 const validStages = new Set<AgentStage>(["needs", "table", "support"]);
+const defaultBaseUrl = "https://api.deepseek.com";
 
 export async function POST(request: Request) {
   try {
@@ -21,7 +22,8 @@ export async function POST(request: Request) {
       return NextResponse.json({ error: "请求参数不完整。" }, { status: 400 });
     }
 
-    const response = await fetch("https://api.deepseek.com/chat/completions", {
+    const baseUrl = (process.env.DEEPSEEK_BASE_URL || defaultBaseUrl).replace(/\/$/, "");
+    const response = await fetch(`${baseUrl}/chat/completions`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
